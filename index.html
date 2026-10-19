@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 5 - Câmera</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Captura Analítica com Câmera</h1>
+        
+        <div class="input-group">
+            <label for="studentName">Nome do Aluno:</label>
+            <input type="text" id="studentName" placeholder="Digite seu nome completo">
+        </div>
+
+        <div class="controls">
+            <button id="btnStart">Ligar Câmera</button>
+            <button id="btnStop" disabled>Desligar Câmera</button>
+            <button id="btnCapture" disabled>Capturar Foto</button>
+        </div>
+
+        <div class="filters">
+            <label for="filterSelect">Efeito Visual:</label>
+            <select id="filterSelect">
+                <option value="none">Normal (Nenhum)</option>
+                <option value="sepia(1)">Sépia</option>
+                <option value="grayscale(1)">Preto e Branca</option>
+                <option value="invert(1)">Invertido</option>
+            </select>
+        </div>
+
+        <p id="errorMsg" class="error"></p>
+
+        <div class="video-canvas-container">
+            <!-- Elemento de vídeo em tempo real -->
+            <video id="video" autoplay playsinline></video>
+            <!-- Canvas onde a foto processada será renderizada -->
+            <canvas id="canvas" style="display: none;"></canvas>
+        </div>
+
+        <div id="resultContainer" class="result-container" style="display: none;">
+            <h3>Foto Processada:</h3>
+            <img id="photoResult" alt="Foto capturada">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
